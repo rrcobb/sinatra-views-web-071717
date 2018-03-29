@@ -6,11 +6,10 @@ We'll explore the purpose of views in a Sinatra application and will render them
 
 ## Objectives
 
-1. Explain the advantage of storing HTML in a separate file from `app.rb`
-2. Create `index.erb` in the views directory
-3. Update your controller to render appropriate erb files
-2. Render multiple routes with multiple views
-
+1.  Explain the advantage of storing HTML in a separate file from `app.rb`
+2.  Create `index.erb` in the views directory
+3.  Update your controller to render appropriate erb files
+4.  Render multiple routes with multiple views
 
 ### Part 1: Rendering HTML
 
@@ -20,7 +19,7 @@ Rendering plain text is a great way to test the behaviors of our routes, but it 
 get '/' do
 	"<h1>Hello World</h1>"
 end
-``` 
+```
 
 Run `shotgun` and go to [http://localhost:9393](http://localhost:9393). Your "Hello World" text should now appear as an `<h1>`. Nice!
 
@@ -51,7 +50,7 @@ Now, we just need to update our controller to render the `index.erb` file at the
 	get '/' do
 	  erb :index
 	end
-``` 
+```
 
 This tells Sinatra to render a file called `index.erb` inside of a directory called `views`. Save your files and refresh your preview to see your changes. Awesome, right?
 
@@ -63,7 +62,7 @@ We can create as many routes and views as we want. Let's create a route called "
 	get '/' do
 	  erb :index
 	end
-	
+
 	get "/info" do
 	  "Testing the info page"
 	end
@@ -90,7 +89,7 @@ Finally, update our controller to render that file.
 	get '/' do
 	  erb :index
 	end
-	
+
 	get "/info" do
 	  erb :info
 	end
@@ -102,7 +101,7 @@ It's important to note that the name of the file doesn't have to match the name 
 	get '/' do
 	  erb :index
 	end
-	
+
 	get "/info" do
 	  erb :dogs
 	end
